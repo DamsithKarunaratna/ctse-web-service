@@ -3,14 +3,16 @@
 // initialize dependencies
 import bodyParser from "body-parser";
 import express from "express";
+import { Request, Response } from "express";
 import mongoose from "mongoose";
 import { mogoUrl, port } from "./config";
+import gameRouter from "./routers/gameRouter";
 
 // initialize express app
-const app = express();
+const app: express.Application = express();
 
 // initialize PORT variable for heroku and local ev
-const PORT = process.env.PORT || port;
+const PORT: any = process.env.PORT || port;
 
 // request parsing
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,8 +29,11 @@ mongoose.connect(mogoUrl, {
   process.exit();
 });
 
+// games route
+app.use("/games", gameRouter);
+
 // default route
-app.get("/", (req: any, res: any) => {
+app.get("/", (req: Request, res: Response) => {
   res.json({ message: "welcome to the ctse test API" });
 });
 

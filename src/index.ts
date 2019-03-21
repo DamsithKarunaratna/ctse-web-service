@@ -9,6 +9,9 @@ import { mogoUrl, port } from "./config";
 // initialize express app
 const app = express();
 
+// initialize PORT variable for heroku and local ev
+const PORT = process.env.PORT || port;
+
 // request parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -29,6 +32,6 @@ app.get("/", (req: any, res: any) => {
   res.json({ message: "welcome to the ctse test API" });
 });
 
-app.listen(port, () => {
-  console.log("server lsitening on port " + port);
+app.listen(PORT, () => {
+  console.log("server lsitening on port " + PORT);
 });

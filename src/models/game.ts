@@ -13,7 +13,7 @@ const GameSchema = new Schema({
   image: String,
   release_date: { type: Date, required: false },
   reviews: [Review],
-  title: { type: String, required: true },
+  title: { type: String, required: true, unique: true },
 });
 
 const Game = model<interfaces.IGame>("Game", GameSchema);

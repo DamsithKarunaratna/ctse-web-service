@@ -8,3 +8,5 @@ router.get("/{id}", gameController.getGame);
 router.post("/", gameController.addgame);
 router.put("/{id}", gameController.updateGame);
 router.delete("/{id}", gameController.deleteGame);
+
+export default router;

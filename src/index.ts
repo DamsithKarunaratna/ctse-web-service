@@ -6,6 +6,7 @@ import express from "express";
 import { Request, Response } from "express";
 import mongoose from "mongoose";
 import { mogoUrl, port } from "./config";
+import gameRouter from "./routers/gameRouter";
 
 // initialize express app
 const app: express.Application = express();
@@ -27,6 +28,9 @@ mongoose.connect(mogoUrl, {
   console.log("Could not connect to the database. Exiting now...", err);
   process.exit();
 });
+
+// games route
+app.use("/games", gameRouter);
 
 // default route
 app.get("/", (req: Request, res: Response) => {

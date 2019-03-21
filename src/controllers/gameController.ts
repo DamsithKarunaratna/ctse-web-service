@@ -41,7 +41,7 @@ export const updateGame = (req: Request, res: Response) => {
       if (err) {
         res.send(err);
       } else {
-        res.send("Succesfully updated book!");
+        res.send("Succesfully updated Game entry!");
       }
     }
   );

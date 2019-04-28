@@ -59,13 +59,13 @@ export const addgame = (req: Request, res: Response) => {
 };
 
 export const addAllgames = (req: Request, res: Response) => {
-  
+
   console.log("addAllGames called");
   console.log("req body : " + req.body);
   console.log("req body data: " + req.body.data);
 
-  for(var i=0; i<req.body.length; i++) {
-    console.log(req.body[i]);
+  for (const item of req.body) {
+    console.log(item);
   }
   // Game.insertMany(req.body, function(err: any, game: any) {
   //   if(err) {

@@ -66,7 +66,7 @@ export const addAllgames = (req: Request, res: Response) => {
   //   console.log(item);
   // }
 
-  Game.insertMany(req.body, (err: any, game: any) => {
+  Game.insertMany(req.body, {ordered: false}, (err: any, game: any) => {
     if (err) {
       res.send(err);
     } else {

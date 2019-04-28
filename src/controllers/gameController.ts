@@ -67,10 +67,14 @@ export const addAllgames = (req: Request, res: Response) => {
   // }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Game.insertMany(req.body, {ordered: false}, (err: any, game: any) => {
 =======
   Game.insertMany(req.body, (err: any, game: any) => {
 >>>>>>> Add iterator to request body3
+=======
+  Game.insertMany(req.body, {ordered: false}, (err: any, game: any) => {
+>>>>>>> insertMany() set oredered option to false
     if (err) {
       res.send(err);
     } else {

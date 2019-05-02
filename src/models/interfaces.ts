@@ -13,4 +13,5 @@ interface IReview {
   date: Date;
   rating: number;
   title: string;
+  gameId: string;
 }

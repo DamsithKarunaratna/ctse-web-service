@@ -7,6 +7,7 @@ import { Request, Response } from "express";
 import mongoose from "mongoose";
 import { mogoUrl, port } from "./config";
 import gameRouter from "./routers/gameRouter";
+import reviewRouter from "./routers/reviewRouter";
 
 // initialize express app
 const app: express.Application = express();
@@ -31,6 +32,9 @@ mongoose.connect(mogoUrl, {
 
 // games route
 app.use("/games", gameRouter);
+
+// review route
+app.use("/reviews", reviewRouter);
 
 // default route
 app.get("/", (req: Request, res: Response) => {

@@ -17,7 +17,7 @@ export const addReview = (req: Request, res: Response) => {
             if (err) {
               res.send(err);
             } else {
-              res.send("Succesfully inserted review!");
+              res.send(req.body);
             }
           }
       );
@@ -44,7 +44,7 @@ export const updateReview = (req: Request, res: Response) => {
               console.log(err);
               res.send(err);
             } else {
-              res.send("Succesfully inserted review!");
+              res.send("Succesfully updated review!");
             }
           }
     );

@@ -16,8 +16,8 @@ const app: express.Application = express();
 const PORT: any = process.env.PORT || port;
 
 // request parsing
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: "50mb" , extended: true }));
+app.use(bodyParser.json({limit: "50mb"}));
 
 // initialize mongoose
 mongoose.Promise = global.Promise;

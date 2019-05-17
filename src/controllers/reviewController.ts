@@ -53,7 +53,7 @@ export const updateReview = (req: Request, res: Response) => {
 export const deleteReview = (req: Request, res: Response) => {
     console.log("delete review");
     Game.findOneAndUpdate({
-        _id : req.body.gameId
+        "reviews._id" : req.params.id
     }, {
         $pull: {
             reviews : {

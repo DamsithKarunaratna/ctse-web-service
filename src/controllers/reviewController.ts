@@ -50,6 +50,29 @@ export const updateReview = (req: Request, res: Response) => {
     );
 };
 
+export const deleteReview = (req: Request, res: Response) => {
+    console.log("delete review");
+    Game.findOneAndUpdate({
+        _id : req.body.gameId
+    }, {
+        $pull: {
+            reviews : {
+                _id: req.params.id
+            }
+        }
+    },
+    (err: any, book: any) => {
+        console.log(book);
+        if (err) {
+          console.log(err);
+          res.send(err);
+        } else {
+          res.send("Succesfully deleted review!");
+        }
+      }
+    );
+};
+
 export const getAllReviews = (req: Request, res: Response) => {
     console.log("get all reviews");
     Game.find({

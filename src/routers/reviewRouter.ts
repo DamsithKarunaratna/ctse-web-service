@@ -6,6 +6,7 @@ const router: Router = Router();
 router.post("/", reviewController.addReview);
 router.put("/:id", reviewController.updateReview);
 router.get("/", reviewController.getAllReviews);
+router.delete("/:id", reviewController.deleteReview);
 
 // router.get("/", gameController.allGames);
 // router.get("/:id", gameController.getGame);

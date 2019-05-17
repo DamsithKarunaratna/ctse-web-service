@@ -7,6 +7,7 @@ const Review = new Schema({
   gameId: String,
   rating: { type: Number, min: 0, max: 5 },
   title: String,
+  userEmail: String
 });
 
 const GameSchema = new Schema({

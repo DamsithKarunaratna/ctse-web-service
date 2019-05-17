@@ -14,4 +14,5 @@ interface IReview {
   rating: number;
   title: string;
   gameId: string;
+  userEmail: string;
 }

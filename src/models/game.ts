@@ -13,7 +13,7 @@ const Review = new Schema({
 const GameSchema = new Schema({
   genre: String,
   image: String,
-  release_date: { type: Date, required: false },
+  release_date: { type: String, required: false },
   reviews: [Review],
   title: { type: String, required: true, unique: true },
 });

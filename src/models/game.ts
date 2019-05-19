@@ -3,7 +3,7 @@ import * as interfaces from "./interfaces";
 
 const Review = new Schema({
   body: String,
-  date: { type: Date, default: Date.now },
+  date: String,
   gameId: String,
   rating: { type: Number, min: 0, max: 5 },
   title: String,

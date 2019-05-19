@@ -11,7 +11,7 @@ export interface IGame extends Document {
 
 interface IReview {
   body: string;
-  date: Date;
+  date: string;
   rating: number;
   title: string;
   gameId: string;

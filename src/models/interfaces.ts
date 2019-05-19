@@ -5,6 +5,7 @@ export interface IGame extends Document {
   release_date: string;
   image: any;
   genre: string;
+  owner_email: string;
   reviews: IReview[];
 }
 
